@@ -23,17 +23,8 @@ docker run --name twint -v /tmp/.X11-unix:/tmp/.X11-unix -v $(PWD)/data:/data/da
 
 ### Other
 Steps:
-1. `Install node-sqlite3` - I recommend building this from source by doing the following:
-```
-git clone git clone https://github.com/mapbox/node-sqlite3.git
-cd node-sqlite3
-npm install --build-from-source
-```
-or you can run
-```
-npm install sqlite3
-```
-2. `npm install` - In this directory
+1. `npm install` - In this directory;
+2. Unzip `sqlile3.zip` and copy the directory under `node_modules`;
 3. To start `Twint OSINT Explorer` just run `npm start .` 
 
 ## Descrption
@@ -63,6 +54,8 @@ How to:
 
 ## Run
 If you don't build you can run `npm start .` and if you want to build you can run `npm run build` (you might change configs in `package.json` to build for your own system and arch).
+
+There are releases ready-to-use as well.
 
 ## Dev
 This feature and this Wiki is highly under development. The code and features might not be completed but everything works as expected and tested.
