@@ -14,7 +14,7 @@
         </script>
             <link href="node_modules/vis/dist/vis-network.min.css" rel="stylesheet" type="text/css"/>
             <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-            <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">         
+            <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
         <style>
             form {
                 margin-left: 10px;
@@ -35,21 +35,21 @@
         </style>
     </head>
     <body>
-        <form action=ìì>      
+        <form action=ìì>
             <div class="uk-margin" uk-margin>
                 <div uk-form-custom="target: true">
                     <input class="uk-input uk-form-width-medium" type="text" placeholder="Database file" id="submitDatabase">
                 </div>
                 <div uk-form-custom="target: true">
-                    <input class="uk-input uk-form-width-medium" type="text" placeholder="Graph file" id="graphFile">    
+                    <input class="uk-input uk-form-width-medium" type="text" placeholder="Graph file" id="graphFile">
                 </div>
 
                 <div uk-form-custom="target: > * > span:first-child">
                     <select id="submitTable">
                         <option value="">Please select...</option>
                         <option value="users where user = ">Users</option>
-                        <option value="followers where follower = ">Followers</option>
-                        <option value="following where follows =">Following</option>
+                        <option value="followers_names where follower = ">Followers</option>
+                        <option value="following_names where follows =">Following</option>
                     </select>
                     <button class="uk-button uk-button-default" type="button" tabindex="-1">
                         <span></span>
@@ -58,7 +58,7 @@
                 </div>
                 <input class="uk-input uk-form-width-medium" type="text" id="submitQuery" placeholder="Condition">
             </div>
-            
+
             <div>
                 <input class="uk-input uk-form-width-medium" type="text" id="submitRawQuery" placeholder="Raw Query">
                 <button type="button" class="uk-button uk-button-default" onclick="loadQuery()">Load settings</button>
@@ -89,7 +89,7 @@
                 val = document.getElementById("submitDatabase").value;
                 var db = new sqlite3.Database(val);
                 console.log(query);
-                if (query.split(" ")[3] == "followers") {
+                if (query.split(" ")[3] == "followers_names") {
                     db.each(query, (err, result) => {
                         try{
                             nodes.add({
@@ -189,7 +189,7 @@
                         timestep: 1,
                     },
                     groups: {
-                        user: {shape: 'icon', icon: 
+                        user: {shape: 'icon', icon:
                             {
                                 face : 'Ionicons',
                                 code : '\uf47e',
