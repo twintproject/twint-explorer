@@ -23,8 +23,16 @@ docker run --name twint -v /tmp/.X11-unix:/tmp/.X11-unix -v $(PWD)/data:/data/da
 
 ### Other
 Steps:
-1. `npm install` - In this directory;
-2. Unzip `sqlile3.zip` and copy the directory under `node_modules`;
+1. `Install node-sqlite3` - I recommend to re-build by doing the following:
+```
+npm install electron-rebuild
+./node_modules/.bin/electron-rebuild -w sqlite3 -p
+```
+or you can run
+```
+npm install sqlite3
+```
+2. `npm install` - In this directory
 3. To start `Twint OSINT Explorer` just run `npm start .` 
 
 ## Descrption
@@ -52,8 +60,8 @@ How to:
 
 **Attention here**: using * in condition might require a lot of time, I did the best to speed up, good luck.
 
-## Run
-If you don't build you can run `npm start .` and if you want to build you can run `npm run build` (you might change configs in `package.json` to build for your own system and arch).
+## Run without compile
+Just download the correct packaged version for your system, unzip, move to that directory with your terminal and run `./twint`. Place **in this same directory** your `.db` file!
 
 There are releases ready-to-use as well.
 
